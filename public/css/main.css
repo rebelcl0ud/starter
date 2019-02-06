@@ -2,7 +2,7 @@ header {
   background: red; }
 
 body {
-  background: purple;
+  background: cyan;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -1,14 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
 
-// gulp.task('printName', function() {
-// 	console.log('jo')
-// })
-
-// gulp.task('printAge', function() {
-// 	console.log('30')
-// })
 
 // sass
 gulp.task('sass', function () {
@@ -18,11 +13,24 @@ gulp.task('sass', function () {
       browsers: ['last 2 versions'],
       // cascade: false
     }))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('./public/css'))
+    .pipe(browserSync.stream())
+});
+
+// server
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./public",
+      notify: false,
+      // when true opens new window each 'gulp' run
+      open: false
+    }
+  });
 });
 
 
 
-gulp.task('default',['sass'], function() {
+gulp.task('default',['sass', 'browser-sync'], function() {
 	gulp.watch('./src/scss/**/*', ['sass']);
 })
