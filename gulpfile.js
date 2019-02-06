@@ -23,4 +23,6 @@ gulp.task('sass', function () {
 
 
 
-// gulp.task('default',['printName', 'printAge'])
+gulp.task('default',['sass'], function() {
+	gulp.watch('./src/scss/**/*', ['sass']);
+})
