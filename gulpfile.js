@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
 
 // gulp.task('printName', function() {
 // 	console.log('jo')
@@ -13,7 +14,13 @@ const sass = require('gulp-sass');
 gulp.task('sass', function () {
   return gulp.src('./src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      // cascade: false
+    }))
     .pipe(gulp.dest('./public/css'));
 });
+
+
 
 // gulp.task('default',['printName', 'printAge'])
