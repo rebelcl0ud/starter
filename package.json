@@ -35,6 +35,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-exec": "^3.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.11.0",
