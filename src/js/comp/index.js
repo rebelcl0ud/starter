@@ -14,6 +14,7 @@ class Layout extends Component {
 		return (
 			<div class="home">
 				<h1>hebwo</h1>
+				<h2>O_O</h2>
 			</div>
 		)
 	}
